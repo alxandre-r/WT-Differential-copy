@@ -4,7 +4,7 @@
  * 
  * Alexandre Robert
  * 01/12/2022
- * Version 2.1 (ajout des .log)
+ * Version 2.1.2 Upgraded log, cleaned main
  *
  * Utilise un document App.config.xml pour le repertoire source unique (le plus haut) depuis lequel copier et sa destination
  * Utilise un document folder.ini qui référencie le détail des répertoires (plus bas) à copier
