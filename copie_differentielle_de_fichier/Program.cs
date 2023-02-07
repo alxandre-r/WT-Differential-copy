@@ -2,7 +2,7 @@
  * Alexandre Robert
  * 01/12/2022
  * 
- * Version 2.1 - Constitution d'un fichier log suite à l'éxecution
+ * Version 2.1.2 - Upgraded log, cleaned main
  * 
  * COPIE DE DOSSIERS ET FICHIERS AVEC CONFIGURATION
  * 
@@ -22,7 +22,7 @@ string sourceValue = source[0].InnerText;
 string destinationValue = destination[0].InnerText;
 
 // Liste des répertoires à copier à partir du fichier folder.ini (spécifier son chemin)
-string[] folders = File.ReadAllLines("K:\\08_Informatique\\15_Scripts\\Sauvegarde\\copie_differentielle_de_fichier\\folder.ini");
+string[] folders = File.ReadAllLines("K:\\08_Informatique\\15_Scripts\\Sauvegarde\\copie_differentielle_de_fichier\\TEST_folder.ini");
 
 //declaration des variables globales
 int nbFichiersModifier = 0;
@@ -30,16 +30,16 @@ int nbFichierIgnore = 0;
 int nbErreur = 0;
 List<string> listeErreur = new List<string>();
 string log = "K:\\08_Informatique\\15_Scripts\\Sauvegarde\\copie_differentielle_de_fichier\\logs\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
-const string SEPARATION = "----------------------------------";
+const string SEPARATION = "--------------------------------------------------";
 
 
 //************* PARAMETRAGE UTILISATEUR *************//
 
 //affichage infos
-Console.WriteLine("Définis dans le fichier App.Config.xml :");
+Console.WriteLine("Informations définies dans le fichier App.Config.xml : \n");
 Console.WriteLine("SOURCE : " + sourceValue);
-Console.WriteLine("DESTINATION : " + destinationValue);
-Console.WriteLine("La copie concerne l'entièreté des fichiers contenus dans les répertoires suivants :");
+Console.WriteLine("DESTINATION : " + destinationValue + "\n" + SEPARATION + "\n");
+Console.WriteLine("La copie concerne l'entièreté des fichiers contenus dans les répertoires suivants :\n");
 foreach (string folder in folders)
 {
     Console.WriteLine(folder);
@@ -58,33 +58,22 @@ File.AppendAllText(log, "*******************************************************
 // Effectue la copie selon le choix (simple/différentielle)
 if (choixMethode == 1)
 {
-    Console.WriteLine("Vous vous apprêter à faire un copie simple des répertoires susmentionnés");
-    AppuyezPourContinuer();
-    File.AppendAllText(log, "Début :" + DateTime.Now + Environment.NewLine);
     FaireCopyDirectory();
-    //ajout des infos dans le fichier log
-    File.AppendAllText(log, "Fin: " + DateTime.Now + Environment.NewLine);
-    File.AppendAllText(log, SEPARATION + Environment.NewLine);
-    File.AppendAllText(log, "Liste des répertoires concernés : " + Environment.NewLine);
-    foreach (string folder in folders){File.AppendAllText(log, sourceValue + folder + Environment.NewLine);}
-    File.AppendAllText(log, SEPARATION + Environment.NewLine);
-    File.AppendAllText(log, "Copie simple terminée : \nNombre de fichiers copiés : " + nbFichiersModifier + Environment.NewLine);
 }
 else if (choixMethode == 2)
 {
-    Console.WriteLine("Vous vous apprêter à faire un copie différentielle des répertoires susmentionnés");
-    AppuyezPourContinuer();
-    File.AppendAllText(log, "Début :" + DateTime.Now + Environment.NewLine);
     FaireCopyDirectoryDiff();
-    //ajout des infos au fichier log
-    File.AppendAllText(log, "Fin: " + DateTime.Now + Environment.NewLine);
-    File.AppendAllText(log, SEPARATION + Environment.NewLine);
-    File.AppendAllText(log, "Liste des répertoires concernés : " + Environment.NewLine);
-    foreach (string folder in folders){File.AppendAllText(log, sourceValue + folder + Environment.NewLine);}
-    File.AppendAllText(log, SEPARATION + Environment.NewLine);
-    File.AppendAllText(log, "Copie différentielle terminée. \nNombre de fichiers mis à jour : " + nbFichiersModifier + Environment.NewLine);
-    File.AppendAllText(log, "Nombre de fichiers ignorés : " + nbFichierIgnore + Environment.NewLine);
+}
+else
+{
+    Console.WriteLine("Choix incorrect");
+}
 
+//****************** METHODES ******************//
+
+// Affichage erreurs
+void AfficherErreur(int nbErreur, string log)
+{
     if (nbErreur > 0)
     {
         File.AppendAllText(log, "Nombre d'erreur constatées : " + nbErreur + Environment.NewLine);
@@ -97,19 +86,15 @@ else if (choixMethode == 2)
     {
         File.AppendAllText(log, "Aucune erreur constatée" + Environment.NewLine);
     }
-
-    Console.WriteLine("\nTache terminee \n\nInformations dans le fichier log : \n" + log);
 }
-else
-{
-    Console.WriteLine("Choix incorrect");
-}
-
-//****************** METHODES ******************//
 
 // Répète la méthode de copie simple pour chaque répertoire
 void FaireCopyDirectory()
 {
+    Console.WriteLine("Vous vous apprêter à faire un copie simple des répertoires susmentionnés dans le répertoire suivant : \n" + destinationValue + "\n");
+    AppuyezPourContinuer();
+    File.AppendAllText(log, "Début :" + DateTime.Now + Environment.NewLine);
+    
     //pour chaque répertoire
     foreach (string folder in folders)
     {
@@ -130,11 +115,26 @@ void FaireCopyDirectory()
             listeErreur.Add(e.Message + " " + time);
         }
     }
+
+    AfficherErreur(nbErreur, log);
+    Console.WriteLine("\nTache terminee \n\nInformations dans le fichier log : \n" + log);
+
+    //ajout des infos dans le fichier log
+    File.AppendAllText(log, "Fin: " + DateTime.Now + Environment.NewLine);
+    File.AppendAllText(log, SEPARATION + Environment.NewLine);
+    File.AppendAllText(log, "Liste des répertoires concernés : " + Environment.NewLine);
+    foreach (string folder in folders) { File.AppendAllText(log, sourceValue + folder + Environment.NewLine); }
+    File.AppendAllText(log, SEPARATION + Environment.NewLine);
+    File.AppendAllText(log, "Copie simple terminée : \nNombre de fichiers copiés : " + nbFichiersModifier + Environment.NewLine);
 }
 
 //répète la méthode de copie pour chaque répertoire
 void FaireCopyDirectoryDiff()
 {
+    Console.WriteLine("Vous vous apprêter à faire un copie différentielle des répertoires susmentionnés dans le répertoire suivant : \n" + destinationValue + "\n");
+    AppuyezPourContinuer();
+    File.AppendAllText(log, "Début :" + DateTime.Now + Environment.NewLine);
+    
     //pour chaque répertoire
     foreach (string folder in folders)
     {
@@ -155,6 +155,19 @@ void FaireCopyDirectoryDiff()
             listeErreur.Add(e.Message + " " + time);
         }
     }
+
+    AfficherErreur(nbErreur, log);
+    Console.WriteLine("\nTache terminee \n\nInformations dans le fichier log : \n" + log);
+
+    //ajout des infos au fichier log
+    File.AppendAllText(log, "Fin: " + DateTime.Now + Environment.NewLine);
+    DateTime dateDebut = DateTime.Now;
+    File.AppendAllText(log, SEPARATION + Environment.NewLine);
+    File.AppendAllText(log, "Liste des répertoires concernés : " + Environment.NewLine);
+    foreach (string folder in folders) { File.AppendAllText(log, sourceValue + folder + Environment.NewLine); }
+    File.AppendAllText(log, SEPARATION + Environment.NewLine);
+    File.AppendAllText(log, "Copie différentielle terminée. Temps d'éxecution : " + (DateTime.Now - dateDebut) + "\nNombre de fichiers mis à jour : " + nbFichiersModifier + Environment.NewLine);
+    File.AppendAllText(log, "Nombre de fichiers ignorés : " + nbFichierIgnore + Environment.NewLine);
 }
 
 //copie différentielle d'un répertoire - copie uniquement les fichiers modifiés
