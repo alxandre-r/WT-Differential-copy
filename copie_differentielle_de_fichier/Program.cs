@@ -2,7 +2,7 @@
  * Alexandre Robert
  * 01/12/2022
  * 
- * Version 2.1.2 - Upgraded log, cleaned main
+ * Version 2.1.3 - Upgraded log with execution time
  * 
  * COPIE DE DOSSIERS ET FICHIERS AVEC CONFIGURATION
  * 
@@ -22,7 +22,7 @@ string sourceValue = source[0].InnerText;
 string destinationValue = destination[0].InnerText;
 
 // Liste des répertoires à copier à partir du fichier folder.ini (spécifier son chemin)
-string[] folders = File.ReadAllLines("K:\\08_Informatique\\15_Scripts\\Sauvegarde\\copie_differentielle_de_fichier\\TEST_folder.ini");
+string[] folders = File.ReadAllLines("K:\\08_Informatique\\15_Scripts\\Sauvegarde\\copie_differentielle_de_fichier\\folder.ini");
 
 //declaration des variables globales
 int nbFichiersModifier = 0;
@@ -93,7 +93,8 @@ void FaireCopyDirectory()
 {
     Console.WriteLine("Vous vous apprêter à faire un copie simple des répertoires susmentionnés dans le répertoire suivant : \n" + destinationValue + "\n");
     AppuyezPourContinuer();
-    File.AppendAllText(log, "Début :" + DateTime.Now + Environment.NewLine);
+    DateTime dateDebut = DateTime.Now;
+    File.AppendAllText(log, "Début de la copie simple :" + DateTime.Now + Environment.NewLine);
     
     //pour chaque répertoire
     foreach (string folder in folders)
@@ -125,15 +126,18 @@ void FaireCopyDirectory()
     File.AppendAllText(log, "Liste des répertoires concernés : " + Environment.NewLine);
     foreach (string folder in folders) { File.AppendAllText(log, sourceValue + folder + Environment.NewLine); }
     File.AppendAllText(log, SEPARATION + Environment.NewLine);
-    File.AppendAllText(log, "Copie simple terminée : \nNombre de fichiers copiés : " + nbFichiersModifier + Environment.NewLine);
+    File.AppendAllText(log, "Copie simple terminée : \nNombre de fichiers copiés : " 
+        + nbFichiersModifier + Environment.NewLine + "\nTemps d'éxecution : " 
+        + (DateTime.Now - dateDebut).ToString(@"hh\:mm\:ss") + Environment.NewLine);
 }
 
-//répète la méthode de copie pour chaque répertoire
+//répète la méthode de copie différentielle pour chaque répertoire
 void FaireCopyDirectoryDiff()
 {
     Console.WriteLine("Vous vous apprêter à faire un copie différentielle des répertoires susmentionnés dans le répertoire suivant : \n" + destinationValue + "\n");
     AppuyezPourContinuer();
-    File.AppendAllText(log, "Début :" + DateTime.Now + Environment.NewLine);
+    DateTime dateDebut = DateTime.Now;
+    File.AppendAllText(log, "Début de la copie différentielle :" + dateDebut + Environment.NewLine);
     
     //pour chaque répertoire
     foreach (string folder in folders)
@@ -158,16 +162,15 @@ void FaireCopyDirectoryDiff()
 
     AfficherErreur(nbErreur, log);
     Console.WriteLine("\nTache terminee \n\nInformations dans le fichier log : \n" + log);
-
+    
     //ajout des infos au fichier log
     File.AppendAllText(log, "Fin: " + DateTime.Now + Environment.NewLine);
-    DateTime dateDebut = DateTime.Now;
     File.AppendAllText(log, SEPARATION + Environment.NewLine);
     File.AppendAllText(log, "Liste des répertoires concernés : " + Environment.NewLine);
     foreach (string folder in folders) { File.AppendAllText(log, sourceValue + folder + Environment.NewLine); }
     File.AppendAllText(log, SEPARATION + Environment.NewLine);
-    File.AppendAllText(log, "Copie différentielle terminée. Temps d'éxecution : " + (DateTime.Now - dateDebut) + "\nNombre de fichiers mis à jour : " + nbFichiersModifier + Environment.NewLine);
-    File.AppendAllText(log, "Nombre de fichiers ignorés : " + nbFichierIgnore + Environment.NewLine);
+    File.AppendAllText(log, "Copie différentielle terminée." + "\nTemps d'éxecution : " + (DateTime.Now - dateDebut).ToString(@"hh\:mm\:ss") + Environment.NewLine);
+    File.AppendAllText(log, "Nombre de fichiers mis à jour : " + nbFichiersModifier + Environment.NewLine + "Nombre de fichiers ignorés : " + nbFichierIgnore + Environment.NewLine);
 }
 
 //copie différentielle d'un répertoire - copie uniquement les fichiers modifiés
@@ -241,9 +244,11 @@ void CopyDirectory(string cheminSource, string cheminDestination)
 //verification des fichiers complete ou rapide
 void VerifDesFichiers()
 {
-    Console.WriteLine("\nProceder a la verification des fichiers :");
-    Console.WriteLine("1 - Complete");
-    Console.WriteLine("2 - Rapide (uniquement les dossiers principaux)");
+
+    Console.WriteLine("\nProceder a la verification des fichiers :\n" 
+        + "La vérification complète va compter le nombre de fichier dans chaque dossier. Cela permet de tester si l'accès est bien accordé.\n" 
+        + "La vérification rapide ne parcours que les dossiers principaux en entrant pas dans les sous-dossier et fichiers.");
+    Console.WriteLine("1 - Complete\n" + "2 - Rapide (uniquement les dossiers principaux)");
     int choixVerif = Convert.ToInt32(Console.ReadLine());
 
     switch (choixVerif)
@@ -251,13 +256,13 @@ void VerifDesFichiers()
         case 1:
             Console.WriteLine("Vérification des fichiers en cours...");
             int NbFichiersVerifier = 0;
-            //pour chaque répertoire
-            //compte le nombre de fichier contenus dans les dossier et ses sous-dossiers 
+
+            //pour chaque dossier de folder.ini 
             foreach (string folder in folders)
             {
                 try
                 {
-                    //compte le nombre de fichier contenus dans les dossier et ses sous-dossiers (AllDirectories)
+                    //compte le nombre de fichier contenus et dans ses sous-dossiers (AllDirectories)
                     int NbFichiers = Directory.GetFiles(sourceValue + folder, "*.*", SearchOption.AllDirectories).Length;
                     Console.WriteLine(sourceValue + folder + " : " + NbFichiers + " fichiers");
                     NbFichiersVerifier += NbFichiers;
@@ -268,12 +273,12 @@ void VerifDesFichiers()
                     Console.WriteLine("Erreur : " + e.Message);
                 }
             }
-            Console.WriteLine("Total de fichiers verifies : " + NbFichiersVerifier);
+            Console.WriteLine("Total de fichiers parcourus : " + NbFichiersVerifier);
             break;
 
         case 2:
-            //pour chaque répertoire principal
-            //compte le nombre de fichiers
+
+            //pour chaque dossier de folder.ini 
             foreach (string folder in folders)
             {
                 try
@@ -288,7 +293,9 @@ void VerifDesFichiers()
                     Console.WriteLine("Erreur : " + e.Message);
                 }
             }
+            
             break;
+
         default:
             Console.WriteLine("Choix incorrect");
             VerifDesFichiers();
