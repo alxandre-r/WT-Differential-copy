@@ -1,0 +1,41 @@
+****************************************************************
+Début de la copie différentielle :08/02/2023 08:58:52
+Aucune erreur constatée
+Fin: 08/02/2023 08:59:08
+--------------------------------------------------
+Liste des répertoires concernés : 
+\\2019-DOM\PARTAGES\07_CDS
+--------------------------------------------------
+Copie différentielle terminée. 
+ Temps d'éxecution : 00:00:00.0182658
+Nombre de fichiers mis à jour : 0
+Nombre de fichiers ignorés : 60
+Vérification effectuée, 42247 fichiers parcourus.
+Vérification effectuée, 152 fichiers parcourus.
+****************************************************************
+Début de la copie différentielle :08/02/2023 09:05:00
+Nombre d'erreur constatées : 1
+The process cannot access the file '\\2019-DOM\PARTAGES\10_Atelier_BEE\10_06 Dossiers SEE Electrical\2_Affaires\RENAULT BODY FACTORY FLINS\xx.01.2023 - A - RENAULT BODY FACTORY FLINS - CABINE GRAND LARGE ILINE.seeprj' because it is being used by another process. 08/02/2023 09:05:20
+Fin: 08/02/2023 09:05:20
+--------------------------------------------------
+Liste des répertoires concernés : 
+\\2019-DOM\PARTAGES\10_Atelier_BEE
+--------------------------------------------------
+Copie différentielle terminée. 
+ Temps d'éxecution : 00:00:00.0217925
+Nombre de fichiers mis à jour : 40
+Nombre de fichiers ignorés : 82
+Vérification effectuée, 152 fichiers parcourus.
+****************************************************************
+Début de la copie simple :08/02/2023 16:37:49
+Aucune erreur constatée
+Fin: 08/02/2023 18:35:17
+--------------------------------------------------
+Liste des répertoires concernés : 
+\\2019-DOM\PARTAGES\Temporaire
+\\2019-DOM\PUBLIC
+--------------------------------------------------
+Copie simple terminée : 
+Nombre de fichiers copiés : 46629
+
+Temps d'éxecution : 01:57:28

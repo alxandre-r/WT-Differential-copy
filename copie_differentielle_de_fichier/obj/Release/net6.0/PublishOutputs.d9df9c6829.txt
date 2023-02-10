@@ -1,0 +1,5 @@
+\\2019-DOM\Partages\Informatique\15_Scripts\Sauvegarde\copie_differentielle_de_fichier\copie_differentielle_de_fichier.exe
+\\2019-DOM\Partages\Informatique\15_Scripts\Sauvegarde\copie_differentielle_de_fichier\copie_differentielle_de_fichier.dll
+\\2019-DOM\Partages\Informatique\15_Scripts\Sauvegarde\copie_differentielle_de_fichier\copie_differentielle_de_fichier.deps.json
+\\2019-DOM\Partages\Informatique\15_Scripts\Sauvegarde\copie_differentielle_de_fichier\copie_differentielle_de_fichier.runtimeconfig.json
+\\2019-DOM\Partages\Informatique\15_Scripts\Sauvegarde\copie_differentielle_de_fichier\copie_differentielle_de_fichier.pdb

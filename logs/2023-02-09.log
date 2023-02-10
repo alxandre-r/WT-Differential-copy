@@ -1,0 +1,57 @@
+****************************************************************
+Début de la copie différentielle :09/02/2023 12:41:15
+Nombre d'erreur constatées : 1
+The process cannot access the file '\\2019-DOM\Partages\10_Atelier_BEE\10_06 Dossiers SEE Electrical\2_Affaires\RENAULT BODY FACTORY FLINS\xx.01.2023 - A - RENAULT BODY FACTORY FLINS - CABINE GRAND LARGE ILINE.seeprj' because it is being used by another process. 09/02/2023 12:45:55
+Fin: 09/02/2023 12:55:59
+--------------------------------------------------
+Liste des répertoires concernés : 
+\\2019-DOM\Partages\09_Communication_interne
+\\2019-DOM\Partages\10_Atelier_BEE
+\\2019-DOM\Partages\15_RH
+\\2019-DOM\Partages\17_Sécurité_PPSPS
+\\2019-DOM\Partages\Développement - R&D
+\\2019-DOM\Partages\Fabrication - Montage
+\\2019-DOM\Partages\Formation
+\\2019-DOM\Partages\Pieces détachées
+\\2019-DOM\Partages\Pôle coordination
+\\2019-DOM\Partages\Prix de revient
+\\2019-DOM\Partages\Qualité
+--------------------------------------------------
+Copie différentielle terminée.
+Temps d'éxecution : 00:14:44
+Nombre de fichiers mis à jour : 3192
+Nombre de fichiers ignorés : 25504
+****************************************************************
+Début de la copie différentielle :09/02/2023 16:29:47
+Nombre d'erreur constatées : 1
+Impossible de terminer l’opération, car le fichier contient un virus ou un logiciel potentiellement indésirable. : '\\2019-DOM\Partages\08_Informatique\04_Logiciels\SOLIDWORKS 2015 x64 SP05\SOLIDWORKS 2015 x64 SP05\swelectric\PDFCre~1.cab' 09/02/2023 18:31:59
+Fin: 09/02/2023 22:49:34
+--------------------------------------------------
+Liste des répertoires concernés : 
+\\2019-DOM\Partages\01_Affaires
+\\2019-DOM\Partages\02_Comptabilite
+\\2019-DOM\Partages\06_Marketing
+\\2019-DOM\Partages\07_CDS
+\\2019-DOM\Partages\08_Informatique
+\\2019-DOM\Partages\09_Communication_interne
+\\2019-DOM\Partages\10_Atelier_BEE
+\\2019-DOM\Partages\11_BEElectrique
+\\2019-DOM\Partages\12_Atelier
+\\2019-DOM\Partages\15_RH
+\\2019-DOM\Partages\17_Sécurité_PPSPS
+\\2019-DOM\Partages\Achats
+\\2019-DOM\Partages\bemecanique
+\\2019-DOM\Partages\Commercial
+\\2019-DOM\Partages\Développement - R&D
+\\2019-DOM\Partages\Fabrication - Montage
+\\2019-DOM\Partages\Formation
+\\2019-DOM\Partages\Pieces détachées
+\\2019-DOM\Partages\Pôle coordination
+\\2019-DOM\Partages\Prix de revient
+\\2019-DOM\Partages\Qualité
+\\2019-DOM\Partages\SAV
+--------------------------------------------------
+Copie différentielle terminée.
+Temps d'éxecution : 06:19:46
+Nombre de fichiers mis à jour : 140215
+Nombre de fichiers ignorés : 549890
