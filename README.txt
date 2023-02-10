@@ -3,7 +3,7 @@
 /*********************  SCRIPT DE COPIE DE FICHIERS AVEC CONFIGURATION  *********************\
  * 
  * Alexandre Robert
- * 01/12/2022
+ * 07/02/2023
  * Version 2.1.2 Upgraded log, cleaned main
  *
  * Utilise un document App.config.xml pour le repertoire source unique (le plus haut) depuis lequel copier et sa destination
