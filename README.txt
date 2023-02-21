@@ -4,7 +4,7 @@
  * 
  * Alexandre Robert
  * 07/02/2023
- * Version 2.1.2 Upgraded log, cleaned main
+ * Version 2.2 Added suppression of files in destination folder if they don't exist in source folder
  *
  * Utilise un document App.config.xml pour le repertoire source unique (le plus haut) depuis lequel copier et sa destination
  * Utilise un document folder.ini qui référencie le détail des répertoires (plus bas) à copier
