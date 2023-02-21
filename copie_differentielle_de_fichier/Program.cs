@@ -2,9 +2,7 @@
  * Alexandre Robert
  * 01/12/2022
  * 
- * Version 2.2 Added suppression of files in destination folder if they don't exist in source folder
- * 
- * v2.2.1 : AppConfig, folder.ini et log : chemin automatique
+ * Version 2.2.1 : AppConfig, folder.ini et log : chemin automatique
  * 
  * COPIE DE DOSSIERS ET FICHIERS AVEC CONFIGURATION
  * 
@@ -13,11 +11,21 @@
  * 
  */
 
+using System.IO;
 using System.Xml;
+
+// définition des chemins
+//chemin du dossier contenant la solution (copie_differentielle_de_fichier)
+string slnPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName;
+Console.WriteLine("Program Path = " + slnPath);
+
+string appConfigPath = slnPath + "\\App.config.xml";
+string folderiniPath = slnPath + "\\folder.ini";
+string log = slnPath + "\\logs\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
 
 // Import de la configuration
 XmlDocument AppConfig = new XmlDocument();
-AppConfig.Load("K:\\08_Informatique\\15_Scripts\\Sauvegarde\\copie_differentielle_de_fichier\\App.Config.xml");
+AppConfig.Load(appConfigPath);
 XmlNodeList source = AppConfig.GetElementsByTagName("source");
 XmlNodeList destination = AppConfig.GetElementsByTagName("destination");
 
@@ -28,9 +36,8 @@ int nbFichiersModifier = 0;
 int nbFichierIgnore = 0;
 int nbFichierSupprime = 0;
 int nbErreur = 0;
-string[] liste_dossier_a_copier = File.ReadAllLines("K:\\08_Informatique\\15_Scripts\\Sauvegarde\\copie_differentielle_de_fichier\\folder.ini");
+string[] liste_dossier_a_copier = File.ReadAllLines(folderiniPath);
 List<string> listeErreur = new List<string>();
-string log = "K:\\08_Informatique\\15_Scripts\\Sauvegarde\\copie_differentielle_de_fichier\\logs\\" + DateTime.Now.ToString("yyyy-MM-dd") + ".log";
 const string SEPARATION = "--------------------------------------------------";
 
 
