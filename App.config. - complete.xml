@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AppConfig>
+	
+	<source>
+		<value>\\20191-DOM</value>
+	</source>
+		
+	<destination>
+		<value>\\SynologyDS718\Sauvegarde</value>
+	</destination>
+
+</AppConfig>

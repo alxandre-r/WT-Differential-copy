@@ -2,11 +2,11 @@
 <AppConfig>
 	
 	<source>
-		<value>\\2019-DOM</value>
+		<value>C:</value>
 	</source>
 		
 	<destination>
-		<value>\\SynologyDS718\Sauvegardes</value>
+		<value>C:\Users\a.robert\Desktop\destination</value>
 	</destination>
 
 </AppConfig>

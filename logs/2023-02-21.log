@@ -1,0 +1,74 @@
+****************************************************************
+Début de la copie différentielle :21/02/2023 09:32:14
+Nombre d'erreur constatées : 1
+La syntaxe du nom de fichier, de répertoire ou de volume est incorrecte. : 'C:\C:\Users\a.robert\Desktop\source\mail-dispense-cours-03Mars2023.txt' 21/02/2023 09:32:14
+Fin: 21/02/2023 09:32:14
+--------------------------------------------------
+Liste des répertoires concernés : 
+C:\Users\a.robert\Desktop\source
+--------------------------------------------------
+Copie différentielle terminée : 
+Nombre de fichiers copiés : 0
+Nombre de fichiers ignorés : 4
+Nombre de fichiers supprimés : 0
+
+Temps d'éxecution : 00:00:00
+****************************************************************
+Début de la copie différentielle :21/02/2023 09:43:09
+Nombre d'erreur constatées : 1
+Could not find a part of the path 'K:\Users\a.robert\Desktop\source'. 21/02/2023 09:43:09
+Fin: 21/02/2023 09:43:09
+--------------------------------------------------
+Liste des répertoires concernés : 
+C:\Users\a.robert\Desktop\source
+--------------------------------------------------
+Copie différentielle terminée : 
+Nombre de fichiers copiés : 0
+Nombre de fichiers ignorés : 4
+Nombre de fichiers supprimés : 0
+
+Temps d'éxecution : 00:00:00
+
+****************************************************************
+Début de la copie différentielle :21/02/2023 11:24:33
+Nombre d'erreur constatées : 1
+Paramètre incorrect. : 'C:\Users\a.robert\Desktop\source\mail-dispense-cours-03Mars2023.txt' 21/02/2023 11:24:33
+Fin: 21/02/2023 11:24:33
+--------------------------------------------------
+Liste des répertoires concernés : 
+C:\Users\a.robert\Desktop\source
+--------------------------------------------------
+Copie différentielle terminée : 
+Nombre de fichiers copiés : 0
+Nombre de fichiers ignorés : 4
+Nombre de fichiers supprimés : 0
+
+Temps d'éxecution : 00:00:00
+****************************************************************
+Début de la copie différentielle :21/02/2023 13:26:34
+Aucune erreur constatée
+Fin: 21/02/2023 13:26:34
+--------------------------------------------------
+Liste des répertoires concernés : 
+C:\Users\a.robert\Desktop\source
+--------------------------------------------------
+Copie différentielle terminée : 
+Nombre de fichiers copiés : 0
+Nombre de fichiers ignorés : 4
+Nombre de fichiers supprimés : 1
+
+Temps d'éxecution : 00:00:00
+****************************************************************
+Début de la copie différentielle :21/02/2023 13:36:03
+Aucune erreur constatée
+Fin: 21/02/2023 13:36:03
+--------------------------------------------------
+Liste des répertoires concernés : 
+C:\Users\a.robert\Desktop\source
+--------------------------------------------------
+Copie différentielle terminée : 
+Nombre de fichiers copiés : 0
+Nombre de fichiers ignorés : 4
+Nombre de fichiers supprimés : 8
+
+Temps d'éxecution : 00:00:00

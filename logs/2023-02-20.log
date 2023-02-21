@@ -1,0 +1,40 @@
+****************************************************************
+Début de la copie différentielle :20/02/2023 09:34:42
+Aucune erreur constatée
+Fin: 20/02/2023 09:34:42
+--------------------------------------------------
+Liste des répertoires concernés : 
+C:\Users\a.robert\Desktop\source
+--------------------------------------------------
+Copie différentielle terminée : 
+Nombre de fichiers copiés : 4
+Nombre de fichiers ignorés : 0
+Temps d'éxecution : 00:00:00
+****************************************************************
+Début de la copie différentielle :20/02/2023 09:41:07
+Nombre d'erreur constatées : 1
+Could not find a part of the path 'K:\Users\a.robert\Desktop\source'. 20/02/2023 09:41:07
+Fin: 20/02/2023 09:41:07
+--------------------------------------------------
+Liste des répertoires concernés : 
+C:\Users\a.robert\Desktop\source
+--------------------------------------------------
+Copie différentielle terminée : 
+Nombre de fichiers copiés : 0
+Nombre de fichiers ignorés : 4
+Temps d'éxecution : 00:00:00
+****************************************************************
+Début de la copie différentielle :20/02/2023 16:29:22
+Nombre d'erreur constatées : 1
+Could not find a part of the path 'K:\Users\a.robert\Desktop\source'. 20/02/2023 16:29:23
+Fin: 20/02/2023 16:29:23
+--------------------------------------------------
+Liste des répertoires concernés : 
+C:\Users\a.robert\Desktop\source
+--------------------------------------------------
+Copie différentielle terminée : 
+Nombre de fichiers copiés : 0
+Nombre de fichiers ignorés : 4
+Nombre de fichiers supprimés : 0
+
+Temps d'éxecution : 00:00:00
