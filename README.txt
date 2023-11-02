@@ -1,20 +1,21 @@
 
 
-/*********************  SCRIPT DE COPIE DE FICHIERS AVEC CONFIGURATION  *********************\
+/********************* FILE COPY SCRIPT WITH CONFIGURATION *********************\
  * 
  * Alexandre Robert
- * 07/02/2023
- * Version 2.2 Added suppression of files in destination folder if they don't exist in source folder
+ * 21/02/2023
+ * V2.2.1: Paths in code are automated and no longer hard-coded
+ * V2.2 : Added suppression of files in destination folder if they don't exist in source folder
  *
- * Utilise un document App.config.xml pour le repertoire source unique (le plus haut) depuis lequel copier et sa destination
- * Utilise un document folder.ini qui référencie le détail des répertoires (plus bas) à copier
+ * Uses an App.config.xml document for the single (top) source folder to copy from and its destination folder
+ * Uses a folder.ini document referencing the details of the (lower) directories to be copied
  * 
- * Le résultat est reporté dans un fichier log (fichier créer par jour) dans le dossier 'Logs'
+ * The result is reported in a log file (file created per day) in the 'Logs' folder
  * 
  *
- * Amélioration notées pour la prochaine version :
- * - Suppression des dialogues (pour utilisation à l'aide de TaskManager)
- * - le mode sera à préciser dans le fichier App.config.xml ("différentielle", "simple")
- * - la vérification sera optionnelle et à préciser dans le fichier App.config.xml ("complète", "aucune")
+ * Improvements noted for next version :
+ * - Removal of dialogs (for use with TaskManager)
+ * mode to be specified in App.config.xml file ("différentielle", "simple")
+ * verification will be optional and to be specified in App.config.xml ("complète", "aucune")
  *
  */
